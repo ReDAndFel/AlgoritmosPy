@@ -1,8 +1,8 @@
 import services.AlgorithmService as As
 import services.JsonService as Js
 
-json_times_file_path = "../times.json"
-json_matrix_file_path = "../matrix.json"
+json_times_file_path = "../../times.json"
+json_matrix_file_path = "../../matrix.json"
 
 matrix = Js.read_json(json_matrix_file_path)
 
