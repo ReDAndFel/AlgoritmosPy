@@ -2,7 +2,7 @@ import time
 import services.AlgorithmService as As
 import services.JsonService as Js
 
-json_times_file_path = "../../times.json"
+json_times_file_path = "../times.json"
 json_matrix_file_path = "../matrix.json"
 
 matrix1, matrix2 = Js.read_json_matrix(json_matrix_file_path)
@@ -35,6 +35,16 @@ for row in matrix_result_NaivOnArray:
         print(element, end=" ")
     print()   
 
-
-
-
+# Se ejecuta el algoritmo NaivLoopUnrollingTwo
+start_time = time.time()
+matrix_result_NaivLoopUnrollingTwo = As.NaivLoopUnrollingTwo(matrix1,matrix2)
+end_time = time.time()
+elapsed_time = end_time - start_time
+Js.modify_property(json_times_file_path,"NaivLoopUnrollingTwo", elapsed_time)
+print("Tiempo de ejecución de NaivLoopUnrollingTwo:", elapsed_time, "segundos")
+#Imprime la matriz resultante de NaivOnArray
+print("La matrix resultante del NaivLoopUnrollingTwo es:")
+for row in matrix_result_NaivOnArray:
+    for element in row:
+        print(element, end=" ")
+    print()   
