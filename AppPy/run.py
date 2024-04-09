@@ -161,6 +161,18 @@ for row in matrix_result_IV4ParallelBlock:
         print(element, end=" ")
     print()    
 
-             
+# Se ejecuta el algoritmo IV.5 Enhanced Parallel Block
+start_time = time.time()
+matrix_result_IV5EnhancedParallelBlock = As.IV5EnhancedParallelBlock(matrix1,matrix2)
+end_time = time.time()
+elapsed_time = end_time - start_time
+Js.modify_property(json_times_file_path,"IV.5 Enhanced Parallel Block", elapsed_time)
+print("Tiempo de ejecución de IV.5 Enhanced Parallel Block:", elapsed_time, "segundos")
+#Imprime la matriz resultante de IV.5 Enhanced Parallel Block
+print("La matrix resultante del IV.5 Enhanced Parallel Block es:")
+for row in matrix_result_IV5EnhancedParallelBlock:
+    for element in row:
+        print(element, end=" ")
+    print()             
 
     
