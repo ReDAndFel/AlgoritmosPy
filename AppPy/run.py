@@ -175,4 +175,17 @@ for row in matrix_result_IV5EnhancedParallelBlock:
         print(element, end=" ")
     print()             
 
+# Se ejecuta el algoritmo V.3 Sequential block
+start_time = time.time()
+matrix_result_V3Sequentialblock = As.V3Sequentialblock(matrix1,matrix2)
+end_time = time.time()
+elapsed_time = end_time - start_time
+Js.modify_property(json_times_file_path,"V.3 Sequential block", elapsed_time)
+print("Tiempo de ejecución de V.3 Sequential block:", elapsed_time, "segundos")
+#Imprime la matriz resultante de V.3 Sequential block
+print("La matrix resultante del V.3 Sequential block es:")
+for row in matrix_result_V3Sequentialblock:
+    for element in row:
+        print(element, end=" ")
+    print()             
     
