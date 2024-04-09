@@ -318,7 +318,7 @@ def IV5EnhancedParallelBlock (matrix_A, matrix_B):
         for row in range(row_start, min(row_start + block_size, size)):
             for col in range(col_start, min(col_start + block_size, size)):
                 for inner in range(inner_start, min(inner_start + block_size, size)):
-                    result[row][col] += matrix_A[row][inner] * matrix_B[inner][col]
+                    result[row][inner] += matrix_A[row][col] * matrix_B[col][inner]
 
     with ThreadPoolExecutor() as executor:
         futures = []
