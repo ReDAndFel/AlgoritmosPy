@@ -275,7 +275,7 @@ def IV3Sequentialblock(matrix_A, matrix_B):
                 for row in range(row_block, min(row_block + block_size, rows_A)):
                     for col in range(col_block, min(col_block + block_size, cols_B)):
                         for col_A in range(col_A_block, min(col_A_block + block_size, cols_A)):
-                            result[row][col] += matrix_A[row][col_A] * matrix_B[col_A][col]
+                            result[row][col_A] += matrix_A[row][col] * matrix_B[col][col_A]
 
     
     return result
